@@ -36,3 +36,19 @@ export async function getPokemonTypes() {
     }  
 
 }
+
+export async function getPokemonsByType(type) {
+    try {
+        let { data } =  await axios.get(BASE_URL + 'type/' + type)   
+
+        return data
+
+    } catch(e) {
+        let { status } = e.response
+
+        if (status === 404) 
+            throw 'unavailable resource'
+        
+        throw 'pokemons fetching failed'
+    }
+}
