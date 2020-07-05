@@ -8,6 +8,7 @@ import {
 // import views/components
 import Home from './views/home/Home'
 import PokemonType from './views/pokemonType/PokemonType.js';
+import PokemonView from './views/pokemonView/PokemonView.js'
 import Header from './components/header/Header'
 
 import './App.css';
@@ -29,6 +30,10 @@ function App() {
 
 							<Route exact path="/type/:type">
 								<PokemonType />
+							</Route>
+
+							<Route exact path="/detail/:name">
+								<PokemonView />
 							</Route>
 						</Switch>
 					</div>
