@@ -3,6 +3,7 @@ import React from 'react';
 import Paginator from '../../components/paginator/Paginator'
 import Loader from '../../components/loader/Loader.js'
 import Error from '../../components/error/Error.js'
+import PokemonList from "../../components/list/PokemonList";
 
 import { getPokemonPage } from '../../http'
 
@@ -48,11 +49,7 @@ export default function(props) {
                 error && <Error message={error} />
             }
             {
-                !error && !isLoading && 
-
-                <div className="c-flex c-flex-wrap c-flex-sp-around">
-                    { pokemons.map(name => <p key={name}> {name} </p>)}    
-                </div>            
+                !error && !isLoading && <PokemonList list={pokemons} />        
             }
             
             <Paginator onClick={onClick} isLastPage={isLastPage} isFirstPage={pageNumber === 0}/>

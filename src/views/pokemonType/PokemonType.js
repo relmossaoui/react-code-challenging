@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 
 import Loader from '../../components/loader/Loader'
 import Error from '../../components/error/Error'
+import PokemonList from "../../components/list/PokemonList";
+
 
 import { getPokemonsByType } from '../../http'
 
@@ -44,11 +46,7 @@ export default function(props) {
                 error && <Error message={error} />
             }
             {
-                !isLoading && !error  && 
-
-                <div className="c-flex c-flex-wrap c-flex-sp-around">
-                    { pokemons.map(name => <p key={name}> {name} </p>)}    
-                </div>
+                !isLoading && !error  && <PokemonList list={pokemons} />
             }
             
         </>
