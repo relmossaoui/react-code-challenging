@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 .c-flex {
   display: flex;
 }
@@ -27,3 +26,26 @@
   flex-wrap: wrap;
 }
 
+@media (max-width : 500px) {
+  .content {
+      width : 95% 
+  } 
+}
+
+@media (max-width : 768px ) and (min-width : 500px) {
+  .content {
+      width : 80% !important
+  }
+}
+
+@media (max-width : 1024px ) and (min-width : 768px) {
+  .content {
+      width : 60% !important
+  }
+}
+
+@media (min-width : 1024px) {
+  .content {
+      width : 40% !important
+  }
+}

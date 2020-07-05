@@ -4,6 +4,8 @@ import {
     useHistory
 } from 'react-router-dom';
 
+import Select from '../select/Select.js'
+
 import { getPokemonTypes } from '../../http'
 
 import './Header.css';
@@ -36,11 +38,13 @@ export default function(props) {
     return (
         <ul className="header c-flex c-flex-sp-between c-flex-center-items">
             <li className="c-flex align-items"> <Link to="/"> Home </Link> </li>          
-            <li className=""> 
-                <select value={selectedType} onChange={onSelectType}>
-                    <option value={''} disabled> Select Type </option>
-                    { types.map(({ name }) => <option key={name} value={name}> {name} </option>)}
-                </select>
+            <li className="">
+                <Select 
+                    options={types} 
+                    value={selectedType} 
+                    onChange={onSelectType} 
+                    defaultOption="Select type"
+                /> 
             </li>
         </ul>
     )

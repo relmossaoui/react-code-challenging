@@ -21,7 +21,7 @@ function App() {
 					<Header /> 
 				</header>
 
-				<div>
+				<div className=" c-flex c-flex-sp-around">
 					<div className="content">
 						<Switch >
 							<Route exact path="/">
