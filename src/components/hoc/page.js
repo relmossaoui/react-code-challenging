@@ -35,6 +35,7 @@ export default function({ filter, fetchData = getPokemonsByFilter }) {
             const getPage = async () => {
                 try {
                     setIsLoading(true);
+                    setError(null)
                     
                     let data = []
 
