@@ -5,7 +5,7 @@ export default function({ imgList=[], name, details = []}) {
     return(
         <div className="card">
             <div className='card-header'>
-                { imgList.map(url => <img src={url} />)}
+                { imgList.map(url => <img alt="not found" key={url} src={url} />)}
             </div>
             <div className="title"> { name }</div>
             <div className="details">

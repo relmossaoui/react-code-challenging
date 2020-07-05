@@ -24,10 +24,14 @@ async function fetchData(url, defaultErrorMessage = "Data fetching failed") {
     } 
 }
 
-export const getPokemonPage     = async ({pageNumber = 0, pageSize = 20 }) => await fetchData(`pokemon?limit=${pageSize}&offset=${pageSize * pageNumber}`, 'Page fetching failed')
+export const getPokemonPage         = async ({pageNumber = 0, pageSize = 20 }) => await fetchData(`pokemon?limit=${pageSize}&offset=${pageSize * pageNumber}`, 'Page fetching failed')
 
-export const getPokemonTypes    = async () => await fetchData('type', 'pokemon types fetching failed')
+export const getPkFilterList        = async (filter) => await fetchData(filter, 'pokemon types fetching failed')
 
-export const getPokemonsByType  = async (type) => await fetchData('type/' + type, 'Pokemons fetching failed')
+export const getPokemonsByFilter    = async ({ filter, value }) => await fetchData(filter + '/' + value, 'Pokemons fetching failed')
 
-export const getPokemon         = async (name) => await fetchData('pokemon/' + name, 'Pokemon fetching failed') 
+export const getPokemon             = async (name) => await fetchData('pokemon/' + name, 'Pokemon fetching failed') 
+
+
+export const PK_TYPE_FILTER_NAME    = 'type';
+export const PK_ABILITY_FILTER_NAME = 'ability'
