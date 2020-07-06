@@ -15,6 +15,9 @@ async function fetchData(url, defaultErrorMessage = "Data fetching failed") {
         return data
 
     } catch(e) {
+        if (e.response === undefined)
+            throw 'Network Error'
+            
         let { status } = e.response
 
         if (status === 404) 

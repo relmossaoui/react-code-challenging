@@ -8,6 +8,8 @@ import PokemonList from "../../components/list/PokemonList";
 
 import { getPokemonsByFilter } from '../../http'
 
+import './Page.css'
+
 import Paginator from '../paginator/Paginator';
 const PAGE_SIZE = 20;
 
@@ -41,7 +43,6 @@ export default function({ filter, fetchData = getPokemonsByFilter }) {
 
                     if (!filter) {
                         let { results, next } = await fetchData({pageNumber, pageSize : PAGE_SIZE });     
-                
                         data = results.map(({ name }) => name)
 
                         if (!next) setIsLastPage(true)
@@ -66,6 +67,9 @@ export default function({ filter, fetchData = getPokemonsByFilter }) {
         return (
             <>
                 {
+                    !filter && <Paginator className="paginator" onClick={value => setPageNumber(pageNumber + value)} isLastPage={isLastPage} isFirstPage={pageNumber === 0}/>
+                } 
+                {
                     isLoading && <Loader message='chargement en cours' />
                 }
                 {
@@ -73,11 +77,7 @@ export default function({ filter, fetchData = getPokemonsByFilter }) {
                 }
                 {
                     !isLoading && !error  && <PokemonList list={pokemons} />
-                }
-
-                {
-                    !filter && <Paginator onClick={value => setPageNumber(pageNumber + value)} isLastPage={isLastPage} isFirstPage={pageNumber === 0}/>
-                }   
+                }  
             </>
         )
     }
