@@ -1,68 +1,75 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React Coding Challenge
+Overview
+To complete this challenge, you will need to write a simple React based web app, and provide us the source files to be built.
 
-## Available Scripts
+The purpose of this challenge is to assess your skills and approach to composing a simple web app given a set of instructions.
 
-In the project directory, you can run:
+This challenge is expected to take about 2-3 hours.
 
-### `npm start`
++ I taked 8 hours to produce it.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The Challenge
+It's very simple. You'll need to build a set of React components to render the app. You'll also need to request a JSON feed, filter that data, and use the relevant fields.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Although this is a basic exercise, we'll be looking for simple, well-designed, performant, and tested code in the submission.
 
-### `npm test`
+Also, add the following info to your README:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+How did you decide on the technical and architectural choices used as part of your solution?
++ I have decided to use just functional component using React Hooks API.
++ I have tried to decompose our UI to many presentational components.
++ I decompose my project to: components, views, models, http 
 
-### `npm run build`
+Are there any improvements you could make to your submission?
+What would you do differently if you were allocated more time?
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
++ of course, many improvement should be done, if I have more time to do :
+    + using HOC patterns in many cases.
+    + style properly UI.
+    + test the code.
+    
+Details
+You will need to build the following 3 pages with React:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+A "Home" page
+B "View pokemon" page
+C "Types" page
+Please create components for each part of the page (eg. header, content, footer, etc).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The pages should also be usable on mobile and tablet devices.
 
-### `npm run eject`
+"Home" Page
+This will be your index screen.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+You will need to display a paginated list of pokemons, each pokemon is clickable which takes to view pokemon page.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Page size: 20
+Adding some filters is a plus (ex: by type).
+Loading, error and empty states.
+"View pokemon" Page
+Display the selected Pokemon details (name, picture, type...)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Display possible pokemon evolutions (clickable).
+Clicking on type should take to the "Types" page.
+Loading, error and empty states.
+"Types" Page
+Display a list of pokemons belonging to the selected type
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Clickable pokemons to "view pokemon" page.
+Page size: 20.
+Loading, error and empty states.
+FAQ
+What language, framework, build tool... should I use?
+You may use whatever you like as long as the solution is built using React. We prefer it if you did not use any third party CSS frameworks.
 
-## Learn More
+You can use create-react-app.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+We also prefer the use of minimal dependencies.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+API Link
+https://pokeapi.co/
 
-### Code Splitting
+Other Notes
+Please send any other code or projects that you're proud of and would like to share with us.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Any feedback on the coding challenge once you're done is also appreciated!
